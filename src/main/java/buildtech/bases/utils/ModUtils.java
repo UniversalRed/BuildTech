@@ -18,4 +18,11 @@ public class ModUtils {
     public static String localizeFormatted(String key, Object... objects) {
         return ("" + StatCollector.translateToLocalFormatted(key, objects)).trim();
     }
+    public static void error(String msg) {
+        logger.error(msg);
+    }
+
+    public static void info(String msg) {
+        logger.info(msg);
+    }
 }

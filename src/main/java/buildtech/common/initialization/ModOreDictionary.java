@@ -9,10 +9,7 @@ import net.minecraftforge.oredict.OreDictionary;
 public class ModOreDictionary {
 
     public static void registerOreInits() {
-        OreDictionary.registerOre("woodHammer", ModItems.woodHammer);
-        OreDictionary.registerOre("stoneHammer", ModItems.stoneHammer);
         OreDictionary.registerOre("ironHammer", ModItems.ironHammer);
-        OreDictionary.registerOre("diamondHammer", ModItems.diamondHammer);
 
         OreDictionary.registerOre("wireIron", ModItems.wireIron);
         OreDictionary.registerOre("wireGold", ModItems.wireGold);

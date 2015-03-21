@@ -11,15 +11,13 @@ import net.minecraft.item.Item;
  */
 public class ModItems {
 
-    public static Item woodHammer, stoneHammer, ironHammer, diamondHammer;
+    public static Item ironHammer;
     public static Item plateIron, plateGold, plateDiamond, plateEmerald;
     public static Item wireIron, wireGold, wireDiamond, wireEmerald;
+    public static Item axleWood, axleStone, axleIron, axleGold, axleDiamond;
 
     public static void init() {
-        woodHammer = new ItemHammer("woodHammer", 10);
-        stoneHammer = new ItemHammer("stoneHammer", 20);
         ironHammer = new ItemHammer("ironHammer", 30);
-        diamondHammer = new ItemHammer("diamondHammer", 40);
 
         plateIron = new ItemPlate("plateIron");
         plateGold = new ItemPlate("plateGold");
@@ -31,13 +29,15 @@ public class ModItems {
         wireDiamond = new ItemBasic("wireDiamond");
         wireEmerald = new ItemBasic("wireEmerald");
 
+        axleWood = new ItemBasic("axleWood");
+        axleStone = new ItemBasic("axleStone");
+        axleIron = new ItemBasic("axleIron");
+        axleGold = new ItemBasic("axleGold");
+        axleDiamond = new ItemBasic("axleDiamond");
     }
 
     public static void registry() {
-        GameRegistry.registerItem(woodHammer, "woodHammer");
-        GameRegistry.registerItem(stoneHammer, "stoneHammer");
         GameRegistry.registerItem(ironHammer, "ironHammer");
-        GameRegistry.registerItem(diamondHammer, "diamondHammer");
 
         GameRegistry.registerItem(plateIron, "plateIron");
         GameRegistry.registerItem(plateGold, "plateGold");
@@ -48,5 +48,11 @@ public class ModItems {
         GameRegistry.registerItem(wireGold, "wireGold");
         GameRegistry.registerItem(wireDiamond, "wireDiamond");
         GameRegistry.registerItem(wireEmerald, "wireEmerald");
+
+        GameRegistry.registerItem(axleWood, "axleWood");
+        GameRegistry.registerItem(axleStone, "axleStone");
+        GameRegistry.registerItem(axleIron, "axleIron");
+        GameRegistry.registerItem(axleGold, "axleGold");
+        GameRegistry.registerItem(axleDiamond, "axleDiamond");
     }
 }

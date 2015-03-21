@@ -1,6 +1,7 @@
 config.title=BuildTech Config
 
-info.damage=%,d Uses left!
+info.damage=Comes equipped with %,d tries, so get it right!
+
 item.woodHammer.name=Wooden Hammer
 item.stoneHammer.name=Stone Hammer
 item.ironHammer.name=Iron Hammer
@@ -15,3 +16,9 @@ item.wireIron.name=Iron Wire
 item.wireGold.name=Gold Wire
 item.wireDiamond.name=Diamond Wire
 item.wireEmerald.name=Emerald Wire
+
+item.axleWood.name=Wooden Axle
+item.axleStone.name=Stone Axle
+item.axleIron.name=Iron Axle
+item.axleGold.name=Gold Axle
+item.axleDiamond.name=Diamond Axle
