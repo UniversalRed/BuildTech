@@ -1,0 +1,16 @@
+!.gitignore
+/*
+/*/
+!/src/
+!.gitignore
+!gradlew*
+!/gradle/
+!/LICENSE.txt
+!/README.md
+!/COPYING.lesser
+!build.gradle
+
+
+.DS_Store
++.AppleDouble
++.LSOverride

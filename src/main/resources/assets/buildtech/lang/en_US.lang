@@ -1,0 +1,17 @@
+config.title=BuildTech Config
+
+info.damage=%,d Uses left!
+item.woodHammer.name=Wooden Hammer
+item.stoneHammer.name=Stone Hammer
+item.ironHammer.name=Iron Hammer
+item.diamondHammer.name=Diamond Hammer
+
+item.plateIron.name=Iron Plate
+item.plateGold.name=Gold Plate
+item.plateDiamond.name=Diamond Plate
+item.plateEmerald.name=Emerald Plate
+
+item.wireIron.name=Iron Wire
+item.wireGold.name=Gold Wire
+item.wireDiamond.name=Diamond Wire
+item.wireEmerald.name=Emerald Wire

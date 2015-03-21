@@ -1,0 +1,73 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+    }
+}
+
+apply plugin: 'forge'
+
+ext.buildProps = file "gradle.properties"
+
+buildProps.withReader {
+    def prop = new Properties()
+    prop.load(it)
+    ext.config = new ConfigSlurper().parse prop
+}
+
+version = "@VERSION@"
+group= "buildtech"
+archivesBaseName = "${config.version.mod}-BuildTech-${config.version.minecraft}"
+
+minecraft {
+    version = "${config.version.forge}"
+    runDir = "idea"
+    replace "@VERSION@", config.version.mod
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "chickenbones"
+        url = "http://chickenbones.net/maven"
+    }
+
+    maven {
+        name = "buildcraft"
+        url = "http://mod-buildcraft.com"
+    }
+}
+
+dependencies {
+    compile "com.mod-buildcraft:buildcraft:${config.version.buildcraft}:dev"
+
+    compile "codechicken:CodeChickenLib:${config.version.minecraft}-${config.version.ccl}:dev"
+    compile "codechicken:CodeChickenCore:${config.version.minecraft}-${config.version.ccc}:dev"
+    compile "codechicken:NotEnoughItems:${config.version.minecraft}-${config.version.nei}:dev"
+}
+
+processResources
+{
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+                
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+        
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
