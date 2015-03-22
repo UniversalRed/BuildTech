@@ -19,10 +19,8 @@ public class ConfigHandler {
         toggleHardModeRecipes = false;
     }
 
-    public static void loadConfig(Configuration config)
-    {
-        try
-        {
+    public static void loadConfig(Configuration config) {
+        try {
             config.addCustomCategoryComment("Updates", "Section about updates");
             if (config.get("Updates", "shouldCheckForUpdates", true).getBoolean()) {
                 VersionChecker.start();
@@ -35,7 +33,7 @@ public class ConfigHandler {
 
             config.addCustomCategoryComment("Recipes", "Recipes Section");
 
-        }finally{
+        } finally {
 
             if(config.hasChanged());
             config.save();

@@ -1,10 +1,8 @@
 package buildtech.bases.items;
 
-import buildcraft.core.ItemBuildCraft;
 import buildtech.api.nbt.INBTSavable;
 import buildtech.bases.utils.ModUtils;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
@@ -13,7 +11,7 @@ import java.util.List;
 /**
  * Created by UniversalRed on 15-03-21.
  */
-public class ItemCraftingDamage extends ItemBasic implements INBTSavable{
+public class ItemCraftingDamage extends ItemBasic implements INBTSavable {
 
     private int maxDamage;
     private int damage = 1;
@@ -65,15 +63,5 @@ public class ItemCraftingDamage extends ItemBasic implements INBTSavable{
     public void readFromNBT(NBTTagCompound tag) {
         maxDamage = tag.getInteger("maxDamage");
         damage = tag.getInteger("damage");
-    }
-
-    public ItemStack hammerItem(ItemStack hammer) {
-        Item item = new Item();
-        if(item instanceof ItemBasic) {
-            hammer.setItemDamage(hammer.getItemDamage() + 1);
-        } else if(item instanceof ItemBuildCraft) {
-            hammer.setItemDamage(hammer.getItemDamage() + 2);
-        }
-        return hammer;
     }
 }
