@@ -11,12 +11,16 @@ import java.io.File;
 public class ConfigHandler {
 
     public static Configuration config;
-    public static boolean toggleHardModeRecipes, shouldPrintChangelog;
+    public static boolean shouldPrintChangelog, toggleHardGearRecipes, toggleFactoryRecipeChange, toggleWrenchRecipe, toggleRobotRecipesChange, togglePipeRecipeChange;
+
 
     public static void init(File file){
         config = new Configuration(file);
         loadConfig(config);
-        toggleHardModeRecipes = false;
+        /*Toggle options: DEFAULT IS TRUE!*/
+        toggleHardGearRecipes = true;
+        toggleFactoryRecipeChange = true;
+        togglePipeRecipeChange = true;
     }
 
     public static void loadConfig(Configuration config) {
@@ -32,7 +36,13 @@ public class ConfigHandler {
             config.addCustomCategoryComment("IDS'", "IDS' Section");
 
             config.addCustomCategoryComment("Recipes", "Recipes Section");
-
+            //toggleHardGearRecipes = config.get("Recipes", "toggleHardGearRecipes", true).getBoolean();
+            //toggleFactoryRecipeChange = config.get("Recipes", "toggleFactoryRecipeChange", true).getBoolean();
+            toggleHardGearRecipes = true;
+            toggleFactoryRecipeChange = true;
+            toggleRobotRecipesChange = true;
+            toggleWrenchRecipe = true;
+            togglePipeRecipeChange = true;
         } finally {
 
             if(config.hasChanged());

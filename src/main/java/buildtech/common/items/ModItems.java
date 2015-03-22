@@ -1,6 +1,7 @@
 package buildtech.common.items;
 
 import buildtech.bases.items.ItemBasic;
+import buildtech.common.configs.ConfigHandler;
 import buildtech.common.items.hammers.ItemHammer;
 import buildtech.common.items.plates.ItemPlate;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -29,11 +30,13 @@ public class ModItems {
         wireDiamond = new ItemBasic("wireDiamond");
         wireEmerald = new ItemBasic("wireEmerald");
 
-        axleWood = new ItemBasic("axleWood");
-        axleStone = new ItemBasic("axleStone");
-        axleIron = new ItemBasic("axleIron");
-        axleGold = new ItemBasic("axleGold");
-        axleDiamond = new ItemBasic("axleDiamond");
+        if(ConfigHandler.toggleHardGearRecipes == true) {
+            axleWood = new ItemBasic("axleWood");
+            axleStone = new ItemBasic("axleStone");
+            axleIron = new ItemBasic("axleIron");
+            axleGold = new ItemBasic("axleGold");
+            axleDiamond = new ItemBasic("axleDiamond");
+        }
     }
 
     public static void registry() {
@@ -49,10 +52,12 @@ public class ModItems {
         GameRegistry.registerItem(wireDiamond, "wireDiamond");
         GameRegistry.registerItem(wireEmerald, "wireEmerald");
 
-        GameRegistry.registerItem(axleWood, "axleWood");
-        GameRegistry.registerItem(axleStone, "axleStone");
-        GameRegistry.registerItem(axleIron, "axleIron");
-        GameRegistry.registerItem(axleGold, "axleGold");
-        GameRegistry.registerItem(axleDiamond, "axleDiamond");
+        if(ConfigHandler.toggleHardGearRecipes == true) {
+            GameRegistry.registerItem(axleWood, "axleWood");
+            GameRegistry.registerItem(axleStone, "axleStone");
+            GameRegistry.registerItem(axleIron, "axleIron");
+            GameRegistry.registerItem(axleGold, "axleGold");
+            GameRegistry.registerItem(axleDiamond, "axleDiamond");
+        }
     }
 }

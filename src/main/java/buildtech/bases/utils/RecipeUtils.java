@@ -1,15 +1,12 @@
 package buildtech.bases.utils;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import buildcraft.BuildCraftCore;
+import buildcraft.BuildCraftTransport;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.ShapedRecipes;
-import net.minecraft.item.crafting.ShapelessRecipes;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class RecipeUtils{
 
@@ -22,16 +19,22 @@ public class RecipeUtils{
 	        IRecipe tmpRecipe = (IRecipe) recipes.get(scan);
 	        ItemStack recipeResult = tmpRecipe.getRecipeOutput();
 	        if (ItemStack.areItemStacksEqual(resultItem, recipeResult)){
-	        	if (tmpRecipe instanceof ShapedOreRecipe)
-	        	{
+	        	/*if (tmpRecipe instanceof ShapedOreRecipe) {
                     ShapedOreRecipe recipe = (ShapedOreRecipe)tmpRecipe;
                     recipeResult = recipe.getRecipeOutput();
 	        	}
-	        	if (tmpRecipe instanceof ShapelessRecipes)
-	            {
+	        	if (tmpRecipe instanceof ShapelessRecipes) {
 	                ShapelessRecipes recipe = (ShapelessRecipes)tmpRecipe;
 	                recipeResult = recipe.getRecipeOutput();
 	            }
+                if (tmpRecipe instanceof ShapelessOreRecipe) {
+                    ShapelessOreRecipe recipe = (ShapelessOreRecipe)tmpRecipe;
+                    recipeResult = recipe.getRecipeOutput();
+                }*/
+                if (tmpRecipe instanceof IRecipe) {
+                    IRecipe recipe = (IRecipe)tmpRecipe;
+                    recipeResult = recipe.getRecipeOutput();
+                }
 	            recipes.remove(scan);
 	        }
 	    }

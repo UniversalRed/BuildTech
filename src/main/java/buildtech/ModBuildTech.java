@@ -17,7 +17,7 @@ import java.io.File;
 /**
  * Created by UniversalRed on 15-03-21.
  */
-@Mod(name = ModLibs.modNAME, modid = ModLibs.modID, version = ModLibs.version, acceptedMinecraftVersions = "1.7.10", dependencies = "required-after:BuildCraft|Core;after:gregtech;required-after:Forge@[10.13.2.1291,);")
+@Mod(name = ModLibs.modNAME, modid = ModLibs.modID, version = ModLibs.version, acceptedMinecraftVersions = "1.7.10", dependencies = "required-after:BuildCraft|Core;after:BuildCraft|Transport;after:gregtech;required-after:Forge@[10.13.2.1291,);")
 public class ModBuildTech {
 
     public static boolean preInit, init, postInit;
@@ -43,6 +43,7 @@ public class ModBuildTech {
         config = new Configuration(new File(event.getModConfigurationDirectory(), "BuildTech.cfg"));
         ConfigHandler.loadConfig(config);
 
+        ModRecipes.removeRecipes();
         ModIntegrations.loadList();
         proxy.registerObjects();
         preInit = false;

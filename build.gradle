@@ -56,6 +56,12 @@ dependencies {
     compile "codechicken:NotEnoughItems:${config.version.minecraft}-${config.version.nei}:dev"
 }
 
+jar {
+    manifest {
+        attributes 'FMLAT': 'buildtech_at.cfg'
+    }
+}
+
 processResources
 {
     inputs.property "version", project.version

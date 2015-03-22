@@ -30,13 +30,13 @@ public class VersionChecker {
             ModUtils.info("BuildTech version check initiated, current version: @VERSION@");
             try {
 
-                URL version = new URL("https://raw.githubusercontent.com/UniversalRed/RedstoneDistortion/1.7.10/src/main/resources/versions/version");
+                URL version = new URL("https://raw.githubusercontent.com/UniversalRed/BuildTech/1.7.10/src/main/resources/assets/buildtech/versions/version");
                 BufferedReader reader = new BufferedReader(new InputStreamReader(version.openStream()));
                 newerVersionNumber = reader.readLine();
                 if (!currentVersion.equals(newerVersionNumber)) {
                     newerVersionAvailable = true;
                     ModUtils.info("There is a newer version of BuildTech available (" + newerVersionNumber + ") please consider updating");
-                    URL changelogURL = new URL("https://github.com/UniversalRed/RedstoneDistortion/tree/1.7.10/src/main/resources/changelogs" + newerVersionNumber);
+                    URL changelogURL = new URL("https://github.com/UniversalRed/BuildTech/blob/1.7.10/src/main/resources/assets/buildtech/changelogs" + newerVersionNumber);
                     BufferedReader changelogReader = new BufferedReader((new InputStreamReader(changelogURL.openStream())));
                     String line;
                     ArrayList<String> changelogList = new ArrayList<String>();
@@ -56,7 +56,7 @@ public class VersionChecker {
         public void pingVersionChecker() {
             if (Loader.isModLoaded("VersionChecker")) {
                 NBTTagCompound tag = new NBTTagCompound();
-                tag.setString("modDisplayName", "BuildTechv");
+                tag.setString("modDisplayName", "BuildTech");
                 tag.setString("oldVersion", currentVersion);
                 tag.setString("newVersion", newerVersionNumber);
                 tag.setString("updateUrl", "http://minecraft.curseforge.com/mc-mods/79581-buildtech");
