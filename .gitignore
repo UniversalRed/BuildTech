@@ -1,22 +1,15 @@
-# eclipse
-bin
-*.launch
-.settings
-.metadata
-.classpath
-.project
+!.gitignore
+/*
+/*/
+!/src/
+!.gitignore
+!gradlew*
+!/gradle/
+!/LICENSE.txt
+!/README.md
+!/COPYING.lesser
+!build.gradle
 
-# idea
-out
-*.ipr
-*.iws
-*.iml
-.idea
-
-# gradle
-build
-.gradle
-
-# other
-eclipse
-run
+.DS_Store
++.AppleDouble
++.LSOverride
