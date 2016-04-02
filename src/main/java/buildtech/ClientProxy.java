@@ -1,5 +1,6 @@
 package buildtech;
 
+import buildtech.common.blocks.ModBlocks;
 import buildtech.common.items.ModItems;
 
 /**
@@ -10,5 +11,6 @@ public class ClientProxy extends CommonProxy{
     @Override
     public void renderThings() {
         ModItems.registerRenders();
+        ModBlocks.registerRenders();
     }
 }

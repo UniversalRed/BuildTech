@@ -4,11 +4,14 @@ import buildcraft.BuildCraftBuilders;
 import buildcraft.BuildCraftCore;
 import buildcraft.BuildCraftFactory;
 import buildcraft.BuildCraftTransport;
+import buildcraft.api.recipes.BuildcraftRecipeRegistry;
 import buildcraft.core.BCRegistry;
 import buildcraft.core.proxy.CoreProxy;
+import buildcraft.silicon.ItemRedstoneChipset;
 import buildtech.ModBuildTech;
 import buildtech.bases.utils.ModUtils;
 import buildtech.bases.utils.RecipeUtils;
+import buildtech.common.blocks.ModBlocks;
 import buildtech.common.configs.ConfigHandler;
 import buildtech.common.items.ModItems;
 import net.minecraft.init.Blocks;
@@ -21,6 +24,8 @@ import net.minecraftforge.oredict.OreDictionary;
  * Created by UniversalRed on 15-03-21.
  */
 public class ModRecipes {
+
+    public static float chipsetCostMultiplier = 1.0F;
 
     public static void registerRecipes() {
         ModUtils.logger.info("BuildTech has started it's Registration of Recipes!");
@@ -58,10 +63,10 @@ public class ModRecipes {
                 RecipeUtils.removeRecipes(new ItemStack(BuildCraftFactory.floodGateBlock));
             }
         }
+
+        ModUtils.logger.info("BuildTech has finished removing BuildCraft Recipes");
     }
 
-    //replacerecipes() is crashing the game
-    //POST-INITIALIZATION PROBLEM
     public static void replaceRecipes() {
         ModUtils.logger.info("BuildTech has started implementing recipes For Buildcraft!");
 
@@ -69,32 +74,38 @@ public class ModRecipes {
             BCRegistry.INSTANCE.addCraftingRecipe(new ItemStack(BuildCraftCore.woodenGearItem, 1),
                     "oXo",
                     "XSX",
-                    "oXo",
-                    'S', ModItems.axleWood, 'X', Items.stick);
+                    "oXH",
+                    'S', ModItems.axleWood, 'X', Items.stick, 'H', new ItemStack(ModItems.ironHammer, 1, OreDictionary.WILDCARD_VALUE));
 
             BCRegistry.INSTANCE.addCraftingRecipe(new ItemStack(BuildCraftCore.stoneGearItem, 1),
                     "oXo",
                     "XSX",
+                    "oXH",
+                    'S', ModItems.axleStone, 'X', Blocks.cobblestone, 'H', new ItemStack(ModItems.ironHammer, 1, OreDictionary.WILDCARD_VALUE));
+
+            BCRegistry.INSTANCE.addCraftingRecipe(new ItemStack(BuildCraftCore.stoneGearItem, 1),
                     "oXo",
-                    'S', ModItems.axleStone, 'X', Blocks.cobblestone);
+                    "XSX",
+                    "oXH",
+                    'S', ModItems.axleStone, 'X', Blocks.stone, 'H', new ItemStack(ModItems.ironHammer, 1, OreDictionary.WILDCARD_VALUE));
 
             BCRegistry.INSTANCE.addCraftingRecipe(new ItemStack(BuildCraftCore.ironGearItem, 1),
                     "oXo",
                     "XSX",
-                    "oXo",
-                    'S', ModItems.axleIron, 'X', Items.iron_ingot);
+                    "oXH",
+                    'S', ModItems.axleIron, 'X', Items.iron_ingot, 'H', new ItemStack(ModItems.ironHammer, 1, OreDictionary.WILDCARD_VALUE));
 
             BCRegistry.INSTANCE.addCraftingRecipe(new ItemStack(BuildCraftCore.goldGearItem, 1),
                     "oXo",
                     "XSX",
-                    "oXo",
-                    'S', ModItems.axleGold, 'X', Items.gold_ingot);
+                    "oXH",
+                    'S', ModItems.axleGold, 'X', Items.gold_ingot, 'H', new ItemStack(ModItems.ironHammer, 1, OreDictionary.WILDCARD_VALUE));
 
             BCRegistry.INSTANCE.addCraftingRecipe(new ItemStack(BuildCraftCore.diamondGearItem, 1),
                     "oXo",
                     "XSX",
-                    "oXo",
-                    'S', ModItems.axleDiamond, 'X', Items.diamond);
+                    "oXH",
+                    'S', ModItems.axleDiamond, 'X', Items.diamond, 'H', new ItemStack(ModItems.ironHammer, 1, OreDictionary.WILDCARD_VALUE));
         }
 
         if (ConfigHandler.toggleFactoryRecipeChange == true) {
@@ -102,22 +113,22 @@ public class ModRecipes {
                 BCRegistry.INSTANCE.addCraftingRecipe(
                         new ItemStack(BuildCraftBuilders.quarryBlock, 1),
                         "ipi",
-                        "gig",
+                        "gBg",
                         "dDd",
-                        'i', "gearIron", 'p', new ItemStack(ModItems.ironHammer, 1, OreDictionary.WILDCARD_VALUE), 'g', "gearGold", 'd', "gearDiamond", 'D', Items.diamond_pickaxe);
+                        'i', "gearIron", 'p', new ItemStack(ModItems.ironHammer, 1, OreDictionary.WILDCARD_VALUE), 'g', "gearGold", 'd', "gearDiamond", 'D', Items.diamond_pickaxe, 'B', ModBlocks.chargedContainerIron);
             }
 
             BCRegistry.INSTANCE.addCraftingRecipe(new ItemStack(BuildCraftFactory.miningWellBlock, 1),
                     "IRI",
                     "IGI",
                     "IPI",
-                    'I', Items.iron_ingot, 'R', new ItemStack(ModItems.ironHammer, 1, OreDictionary.WILDCARD_VALUE), 'G', BuildCraftCore.ironGearItem, 'P', Items.iron_pickaxe);
+                    'I', ModItems.plateIron, 'R', new ItemStack(ModItems.ironHammer, 1, OreDictionary.WILDCARD_VALUE), 'G', ModBlocks.containerIron, 'P', Items.iron_pickaxe);
 
             BCRegistry.INSTANCE.addCraftingRecipe(new ItemStack(BuildCraftFactory.floodGateBlock, 1),
-                    "IHI",
-                    "GTG",
+                    "THT",
+                    "GBG",
                     "IGI",
-                    'I', Items.iron_ingot, 'G', BuildCraftCore.ironGearItem, 'T', BuildCraftFactory.tankBlock, 'H', new ItemStack(ModItems.ironHammer, 1, OreDictionary.WILDCARD_VALUE));
+                    'I', ModItems.plateIron, 'G', BuildCraftCore.ironGearItem, 'T', BuildCraftFactory.tankBlock, 'H', new ItemStack(ModItems.ironHammer, 1, OreDictionary.WILDCARD_VALUE), 'B', ModBlocks.containerIron);
         }
 
         /*removed due to bugs with removing recipes
@@ -143,6 +154,7 @@ public class ModRecipes {
 
         }
         */
+        ModUtils.logger.info("BuildTech has finished implementing recipes For Buildcraft!");
     }
 
     public static void addRecipes() {
@@ -244,11 +256,24 @@ public class ModRecipes {
                     'W', Items.diamond, 'I', ModItems.axleGold);
 
         }
+
+        /**
+         * BLOCKS
+         */
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.containerIron, 1),
+                "XHX",
+                "GBG",
+                "WWW",
+                'B', Blocks.iron_block, 'G', BuildCraftCore.ironGearItem, 'H', new ItemStack(ModItems.ironHammer, 1, OreDictionary.WILDCARD_VALUE), 'W', ModItems.wireIron);
+
+        ModUtils.logger.info("BuildTech has finished adding It's Recipes!");
     }
 
     public static void addLaserRecipes() {
         ModUtils.logger.info("BuildTech has started adding it's Laser Recipes!");
-        ModUtils.logger.info("BuildTech has finished adding it's Laser Recipes!");
 
+        BuildcraftRecipeRegistry.assemblyTable.addRecipe("buildtech:containerIron", Math.round(250000 * chipsetCostMultiplier), new ItemStack(ModBlocks.chargedContainerIron));
+
+        ModUtils.logger.info("BuildTech has finished adding it's Laser Recipes!");
     }
 }

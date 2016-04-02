@@ -2,13 +2,13 @@
 {
   "modid": "buildtech",
   "name": "BuildTech",
-  "description": "BuildCraft's variant of GregTech.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "description": "BuildTech: making BuildCraft complicated, faster.",
+  "version": "$version",
+  "mcversion": "$mcversion",
   "url": "",
   "updateUrl": "",
   "authorList": ["UniversalRed"],
-  "credits": "UniversalRed : Code & BBoldt : textures",
+  "credits": "UniversalRed, BBoldt and VapourDrive",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

@@ -24,10 +24,6 @@ public class ItemCraftingDamage extends ItemBasic implements INBTSavable {
         this.setFull3D();
     }
 
-    public boolean doesContainerItemLeaveCraftingGrid(ItemStack itemStack) {
-        return false;
-    }
-
     @Override
     public boolean getShareTag() {
         return true;

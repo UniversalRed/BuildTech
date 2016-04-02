@@ -15,7 +15,7 @@ import java.io.File;
 /**
  * Created by UniversalRed on 15-03-21.
  */
-@Mod(name = ModLibs.modNAME, modid = ModLibs.modID, version = ModLibs.version, acceptedMinecraftVersions = "1.8.9", dependencies = "required-after:BuildCraft|Core;after:gregtech;required-after:Forge@[1.8.9-11.15.1.1808,);")
+@Mod(name = ModLibs.modNAME, modid = ModLibs.modID, version = ModLibs.version, acceptedMinecraftVersions = "1.8.9", dependencies = "required-after:BuildCraft|Core;after:BuildCraft|Silicon;after:BuildCraft|Energy;after:gregtech;required-after:Forge@[1.8.9-11.15.1.1808,);")
 public class ModBuildTech {
 
     public static boolean preInit, init, postInit;

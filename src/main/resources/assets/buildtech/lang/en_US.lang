@@ -4,6 +4,8 @@ itemGroup.BTTab=BuildTech
 
 info.damage=Comes equipped with %,d tries, so get it right!
 
+#Items
+
 item.woodHammer.name=Wooden Hammer
 item.stoneHammer.name=Stone Hammer
 item.ironHammer.name=Iron Hammer
@@ -24,3 +26,7 @@ item.axleStone.name=Stone Axle
 item.axleIron.name=Iron Axle
 item.axleGold.name=Gold Axle
 item.axleDiamond.name=Diamond Axle
+
+#Blocks
+tile.containerIron.name=Iron Container
+tile.chargedContainerIron.name=Charged Iron Container

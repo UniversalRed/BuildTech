@@ -2,5 +2,6 @@
 - replaced BC recipes w/ BuildTech recipes
 - added numerous items in the game
 - added Version Checker
-- added Configuration file to tinker with the settings
+- added Configuration file to tinker with the settings (may not work)
 - ported for Minecraft 1.8.9
+- requires BC 7.2.0

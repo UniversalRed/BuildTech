@@ -5,7 +5,7 @@ package buildtech.bases.libs;
  */
 public class ModLibs {
 
-    public static final String version = "@VERSION@";
+    public static final String version = "1.1.0A";
     public static final String modID = "buildtech";
     public static final String modNAME = "BuildTech";
 

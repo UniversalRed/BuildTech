@@ -2,7 +2,6 @@ package buildtech.common.items;
 
 import buildtech.bases.items.ItemBasic;
 import buildtech.bases.libs.ModLibs;
-import buildtech.bases.utils.TextureUtils;
 import buildtech.common.configs.ConfigHandler;
 import buildtech.common.items.hammers.ItemHammer;
 import buildtech.common.items.plates.ItemPlate;
@@ -22,7 +21,7 @@ public class ModItems {
     public static Item axleWood, axleStone, axleIron, axleGold, axleDiamond;
 
     public static void init() {
-        ironHammer = new ItemHammer("ironHammer", 30).setFull3D();
+        ironHammer = new ItemHammer("ironHammer", 10).setFull3D();
 
         plateIron = new ItemPlate("plateIron");
         plateGold = new ItemPlate("plateGold");
