@@ -1,0 +1,26 @@
+config.title=BuildTech Config
+
+itemGroup.BTTab=BuildTech
+
+info.damage=Comes equipped with %,d tries, so get it right!
+
+item.woodHammer.name=Wooden Hammer
+item.stoneHammer.name=Stone Hammer
+item.ironHammer.name=Iron Hammer
+item.diamondHammer.name=Diamond Hammer
+
+item.plateIron.name=Iron Plate
+item.plateGold.name=Gold Plate
+item.plateDiamond.name=Diamond Plate
+item.plateEmerald.name=Emerald Plate
+
+item.wireIron.name=Iron Wire
+item.wireGold.name=Gold Wire
+item.wireDiamond.name=Diamond Wire
+item.wireEmerald.name=Emerald Wire
+
+item.axleWood.name=Wooden Axle
+item.axleStone.name=Stone Axle
+item.axleIron.name=Iron Axle
+item.axleGold.name=Gold Axle
+item.axleDiamond.name=Diamond Axle
