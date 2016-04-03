@@ -1,0 +1,16 @@
+[
+{
+  "modid": "buildtech",
+  "name": "BuildTech",
+  "description": "BuildTech: making BuildCraft complicated, faster.",
+  "version": "$version",
+  "mcversion": "$mcversion",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["UniversalRed"],
+  "credits": "UniversalRed, BBoldt and VapourDrive",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
